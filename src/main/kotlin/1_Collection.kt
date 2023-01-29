@@ -93,6 +93,7 @@ fun main(){
     }
     println(filteredList1)
 
+    println("==============================asSequence > filter > toList ")
     val filteredList2 = upperList2
         .asSequence()
         .filter{it=="A"||it=="C"}
