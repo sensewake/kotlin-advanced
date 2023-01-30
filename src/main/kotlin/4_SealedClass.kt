@@ -12,7 +12,7 @@ data class BackendDeveloper(override val name:String):Developer(){
 }
 
 data class FrontendDeveloper(override val name:String):Developer(){
-    override fun code(language:String){
+    override fun code(language: String){
         println("저는 프론트엔드 개발자입니다. ${language} 를 사용합니다.")
     }
 }
@@ -53,10 +53,12 @@ object DeveloperPool{
 
 fun main(){
     val backendDeveloper = BackendDeveloper(name="토니")
+    backendDeveloper.code(language="JAVA")
     DeveloperPool.add(backendDeveloper)
 
     val frontendDeveloper = FrontendDeveloper(name="카즈야")
     DeveloperPool.add(frontendDeveloper)
+    frontendDeveloper.code(language="JavaScript")
 
     val androidDeveloper = AndroidDeveloper(name="안드로")
     DeveloperPool.add(androidDeveloper)
@@ -64,4 +66,5 @@ fun main(){
     println(DeveloperPool.get("토니"))
     println(DeveloperPool.get("카즈야"))
     println(DeveloperPool.get("안드로"))
+    androidDeveloper.code(language="react-native 와 Kotlin")
 }
